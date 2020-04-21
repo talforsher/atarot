@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="העסקים במושב בני עטרות. צומת הטייסים">
+    <title>בני עטרות שלי</title>
+    <style>
+        img {
+            width: 99%;
+            position: absolute;
+        }
+
+        #text {
+            position: absolute;
+
+        }
+
+        #content {
+            position: absolute;
+            top: 20%;
+            right: 9%;
+            left: 7%;
+        }
+    </style>
+</head>
+
+<body onresize="size()">
+    <img src="hugim.png">
+    <div id="text">
+        <div id="content">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100%" direction="rtl" xml:lang="he" viewBox="0 0 400 650">
+                <text x="400" y="70">אלדד מאסטרו 0545905907
+				</text>
+				<text x="400" y="90">סטודיו לצילום - מעביר חוגים לילדים 
+				</text>
+				<text x="400" y="130">אסנת-סטודיו לקרמיקה 0523456405</text>
+				<text x="400" y="150">חוגים לילדים ומבוגרים –פיסול וקדרות</text>
+				<text x="400" y="170">סדנאות יחודיות בנושאים שונים</text>
+				<text x="400" y="210">טל עינב 0545544549</text>
+				<text x="400" y="230">הסטודיו שלי בבני עטרות ובו אני מטפלת בשיאצו, ומורה לפילאטיס מזרן ופילאטיס מכשירים.</text>
+                <text x="400" y="270">נריה מורה לתופים
+                        0543381682</text>
+<text x="400" y="290">בוגר האקדמיה למוזיקה מעביר שיעורים פרטיים לתופים</text>
+                
+<text x="400" y="330">נינה - סטודיו ליוגה במזור 0543034004</text><text x="400" y="350">מפגשי מדיטציה ופילוסופיה.</text>
+                <text x="400" y="390">סטודיו אלמוג לפילאטיס
+                        0584639922</text>
+<text x="400" y="410">מורה לפילאטיס ובעלת סטודיו אלמוג לפילאטיס מכשירים ביהוד </text>
+            </svg>
+
+        </div>
+    </div>
+
+    <script>
+        function size() {
+            const [x, y] = [document.getElementsByTagName("img")[0].width,
+                document.getElementsByTagName("img")[0].height
+            ];
+            document.getElementById("text").style = "width:" + x + "px; height:" + y + "px;";
+        }
+        document.body.onload = function () {
+            size()
+        }
+    </script>
+</body>
+
+</html>
