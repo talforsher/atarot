@@ -135,6 +135,9 @@ function save() {
         var target = url[i]
         if (!target.value == '') {
             processedTarget = target.value.split(' ')
+            if(processedTarget[0] == 'tel:')
+            target.parentElement.setAttribute('onclick', 'window.open("tel:' + processedTarget[processedTarget.length - 1] + '")')
+            else
             target.parentElement.setAttribute('onclick', 'window.open("' + processedTarget[processedTarget.length - 1] + '")')
         }
     }
