@@ -2,10 +2,12 @@ var express = require('express'),
   fs = require('fs'),
   url = require('url'),
   multer = require('multer')
-  bodyParser = require('body-parser');
+bodyParser = require('body-parser');
 var app = express();
 
-var upload = multer({ dest: 'public/' })
+var upload = multer({
+  dest: 'public/'
+})
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json());
@@ -18,15 +20,23 @@ app.use(express.static('public', {
 }))
 
 app.get('/editjs', function (req, res) {
-  fs.readFile('public/edit.js', function (err, data) {
-    res.end(data)
-  })
+
+  if (req.headers.referer.split('?')[req.headers.referer.split('?').length-1] == 'edit')
+    fs.readFile('public/edit.js', function (err, data) {
+      res.end(data)
+    })
+    else
+  res.end('console.log("no-edit")')
 })
 
 app.get('/editcss', function (req, res) {
-  fs.readFile('public/edit.css', function (err, data) {
-    res.end(data)
-  })
+
+  if (req.headers.referer.split('?')[req.headers.referer.split('?').length-1] == 'edit')
+    fs.readFile('public/edit.css', function (err, data) {
+      res.end(data)
+    })
+    else
+  res.end('console.log("no-edit")')
 })
 
 app.post('/save', function (request, respond) {
@@ -58,6 +68,6 @@ app.post('/upload', upload.single('file'), (req, res, next) => {
     error.httpStatusCode = 400
     return next(error)
   }
-    res.send(file)
-  
+  res.send(file)
+
 })

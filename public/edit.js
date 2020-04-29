@@ -133,7 +133,10 @@ function save() {
     url = document.getElementsByClassName('input')
     for (var i = 0; i < url.length; i++) {
         var target = url[i]
-        target.parentElement.setAttribute('onclick', 'window.open("' + target.value + '")')
+        if (!target.value == '') {
+            processedTarget = target.value.split(' ')
+            target.parentElement.setAttribute('onclick', 'window.open("' + processedTarget[processedTarget.length - 1] + '")')
+        }
     }
     news = document.getElementsByClassName('new')
     while (news.length) {
@@ -159,7 +162,88 @@ function save() {
         remove[0].remove()
     }
     document.getElementById('newImage').remove()
-    scrape = document.documentElement.outerHTML
+    var scrape = `<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164123062-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+    
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+    
+            gtag('config', 'UA-164123062-1');
+        </script>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="העסקים במושב בני עטרות. צומת הטייסים">
+        <title>בני עטרות שלי</title>
+        <style>
+            body {
+                margin: 0;
+            }
+    
+            img {
+                width: 100%;
+                position: absolute;
+            }
+    
+            #buttons {
+                position: absolute;
+            }
+    
+            .hey {
+                position: absolute;
+                width: 10%;
+                padding-top: 10%;
+                background: none;
+                border: none;
+                cursor: pointer;
+                min-width: 20px;
+                height: 0;
+            }
+    
+            .hey .resizer {
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: blue;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                cursor: se-resize;
+            }
+    
+            .hey .plus {
+                background: green;
+                position: absolute;
+                left: 0;
+                top: 0;
+                cursor: cell;
+                border-style: outset;
+            }
+    
+            .hey .minus {
+                background: red;
+                position: absolute;
+                right: 0;
+                top: 0;
+                cursor: not-allowed;
+                border-style: outset;
+            }
+    
+            .hey .input {
+                border: none;
+                background: none;
+            }
+        </style>
+    </head>`
+    scrape += document.body.innerHTML + `</html>`
     var path = location.pathname.slice(1);
     if (path == '')
         path = 'index'
@@ -175,6 +259,7 @@ function save() {
             urls: urls
         })
     })
+    .then(()=>location.replace(location.origin))
 
 }
 var saveButton = document.createElement('button')
