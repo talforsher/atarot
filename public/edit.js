@@ -243,7 +243,7 @@ function save() {
             }
         </style>
     </head>`
-    scrape += document.body.innerHTML + `</html>`
+    scrape += `<body onresize="size()">`+document.body.innerHTML + `</body></html>`
     var path = location.pathname.slice(1);
     if (path == '')
         path = 'index'
