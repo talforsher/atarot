@@ -2,11 +2,12 @@
     var newButton = document.createElement('div')
     newButton.classList.add('hey')
     newButton.classList.add('new')
+    newButton.style = "left: 45%"
     newButton.innerHTML = `
         <div class="plus">+</div>
         <div class="minus">-</div>
         <input class="input" type="text">
-        <div class="resizer"></div>
+
         `
     document.querySelector('#buttons').appendChild(newButton);
 })()
@@ -19,7 +20,6 @@ function actions(button) {
         <div class="plus">+</div>
         <div class="minus">-</div>
         <input class="input" type="text">
-        <div class="resizer"></div>
         `
         button.onclick = ""
     }
@@ -75,8 +75,9 @@ function actions(button) {
 
     function doDrag(e) {
         button.style.width = (startWidth + e.clientX - startX) / button.parentElement.offsetWidth * 100 + '%';
-        button.style.paddingTop = (startHeight + e.clientY - startY) / button.parentElement.offsetHeight * 200 +
+        button.style.paddingTop = (startHeight + e.clientY - startY) / button.parentElement.clientHeight * 215 +
             '%';
+        console.log(button.style.paddingTop)
     }
 
     function stopDrag(e) {
