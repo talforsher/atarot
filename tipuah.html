@@ -1,65 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+    
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164123062-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+    
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+    
+            gtag('config', 'UA-164123062-1');
+        </script>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="העסקים במושב בני עטרות. צומת הטייסים">
+        <title>בני עטרות שלי</title>
+        <style>
+            body {
+                margin: 0;
+            }
+    
+            img {
+                width: 100%;
+                position: absolute;
+            }
+    
+            #buttons {
+                position: absolute;
+            }
+    
+            .hey {
+                position: absolute;
+                width: 10%;
+                padding-top: 10%;
+                background: none;
+                border: none;
+                cursor: pointer;
+                min-width: 20px;
+                height: 0;
+            }
+    
+            .hey .resizer {
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: blue;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                cursor: se-resize;
+            }
+    
+            .hey .plus {
+                background: green;
+                position: absolute;
+                left: 0;
+                top: 0;
+                cursor: cell;
+                border-style: outset;
+            }
+    
+            .hey .minus {
+                background: red;
+                position: absolute;
+                right: 0;
+                top: 0;
+                cursor: not-allowed;
+                border-style: outset;
+            }
+    
+            .hey .input {
+                border: none;
+                background: none;
+            }
+        </style>
+    </head><body onresize="size()"><img id="img" src="5ab0cc579ff792f220b904b9902e9f89">
+	<div id="buttons" style="width: 1349px; height: 2916px;">
+		<div class="hey" onclick="window.open(&quot;tel:0507330041&quot;)" style="top: 21.1934%; left: 61.8236%; width: 26.3158%; padding-top: 2.72805%;">
+		
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+		
+		<div class="hey" style="top: 27.915%; left: 62.1201%; width: 26.3158%; padding-top: 2.72805%;" onclick="window.open(&quot;tel:0502303034&quot;)">
+        
+        
+        
+        </div></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164123062-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
+    <script id="indexScript">
+        function size() {
+            const [x, y] = [document.getElementsByTagName("img")[0].width,
+                document.getElementsByTagName("img")[0].height
+            ];
+            document.getElementById("buttons").style = "width:" + x + "px; height:" + y + "px;";
+        }
+        document.body.onload = function () {
+            size()
+        }
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
+        fetch('editjs')
+            .then(res => res.text())
+            .then(res => {
+                eval(res)
+            })
 
-		gtag('config', 'UA-164123062-1');
-	</script>
+        fetch('editcss')
+            .then(res => res.text())
+            .then(res => {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                document.getElementsByTagName('head')[0].appendChild(style);
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="העסקים במושב בני עטרות. צומת הטייסים">
-	<title>בני עטרות שלי - טיפוח</title>
-	<style>
-		img {
-			width: 99%;
-			position: absolute;
-		}
+                //here is the magic.
+                style.innerHTML = res;
+            })
+    </script>
+    
 
-		#buttons {
-			position: absolute;
-		}
 
-		button {
-			position: absolute;
-			width: 20%;
-			padding-top: 4.8%;
-			background: none;
-			border: none;
-			cursor: pointer;
-		}
-	</style>
-</head>
 
-<body onresize="size()">
-	<img src="tipuah.png">
-	<div id="buttons" style="width: 2648px; height: 5044px;">
-		<button onclick="document.location.href = 'tel:0507330041'" style="top: 25.5%;left: 70.3%;">
-		</button>
-		<button onclick="document.location.href = 'tel:0502303034'" style="top: 33.4%;left: 70.5%;">
-		</button>
-	</div>
-
-	<script>
-		function size() {
-			const [x, y] = [document.getElementsByTagName("img")[0].width,
-				document.getElementsByTagName("img")[0].height
-			];
-			document.getElementById("buttons").style = "width:" + x + "px; height:" + y + "px;";
-		}
-		document.body.onload = function () {
-			size()
-		}
-	</script>
-</body>
-
-</html>
+</body></html>
