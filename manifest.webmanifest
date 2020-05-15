@@ -1,0 +1,15 @@
+{
+  "background_color": "#ABD3A4",
+  "description": "כל העסקים של בני עטרות מאוגדים באפליקציה אחת. טלפונים ודרכי הגעה למושב ולעסק",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "index.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "בני עטרות שלי",
+  "short_name": "Bnei Atarot",
+  "start_url": "index.html"
+}
